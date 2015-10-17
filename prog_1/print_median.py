@@ -6,10 +6,10 @@ import os.path, sys
 
 def median(arr1,arr2,left,right):
     if left > right:
-        return median(arr2, arr1, 0, n-1)
+        return median(arr2, arr1, 0, n-1) #если дошли до края массива - ищем в другом
     i = (left + right) // 2
     j = n - i - 1
-    if arr1[i] >= arr2[j] and (i == 0 or arr1[i] <= arr2[j+1]):
+    if arr1[i] >= arr2[j] and (i == 0 or arr1[i] <= arr2[j+1]): #нашли медиану
         if i== 0 or arr2[j] > arr1[i-1]:
             return (arr1[i] + arr2[j])/2
         else:
